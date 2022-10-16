@@ -8,6 +8,7 @@ runs:
 
     #- name: Install yarn
     #  run: npm install --global yarn
+    #  shell: bash
 
     - name: Disable node version check
       run: yarn config set ignore-engines true
