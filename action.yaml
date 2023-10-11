@@ -4,7 +4,7 @@ inputs:
   debug:
     description: Sets "NODE_ENV" to "debug".
     required: false
-    default: ''
+    default: false
 
 runs:
   using: composite
@@ -14,7 +14,9 @@ runs:
 
     - name: TODO
       env:
-        NODE_ENV: ${{ inputs.debug }}
+        NODE_ENV: |
+          contains(inputs.debug, 'true') &&
+          'debug'
       run: echo Debug mode is $NODE_ENV jau.
       shell: bash
 
@@ -30,6 +32,8 @@ runs:
 
     - name: Install packages marked as dependencies
       env:
-        NODE_ENV: ${{ inputs.debug }}
+        NODE_ENV: |
+          contains(inputs.debug, 'true') &&
+          'debug'
       run: yarn
       shell: bash
