@@ -12,12 +12,6 @@ runs:
   steps:
     - uses: actions/checkout@v4.1.0
 
-    - name: TODO
-      env:
-        NODE_ENV: ${{ contains(inputs.debug, 'true') && 'debug' }}
-      run: echo Debug mode is $NODE_ENV jau.
-      shell: bash
-
     # Runs a set of commands using the runners shell
 
     #- name: Install yarn
