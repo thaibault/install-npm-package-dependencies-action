@@ -1,8 +1,23 @@
 name: Build
+
+inputs:
+  debug:
+    description: Sets "NODE_ENV" to "debug".
+    required: false
+    default: ''
+
 runs:
+  env:
+    NODE_ENV: ${{ inputs.debug }}
+
   using: composite
+
   steps:
     - uses: actions/checkout@v4.1.0
+
+    - name: TODO
+      run: echo Debug mode is $NODE_ENV jau.
+      shell: bash
 
     # Runs a set of commands using the runners shell
 
