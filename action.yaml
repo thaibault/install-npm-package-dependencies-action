@@ -15,7 +15,7 @@ runs:
     - name: TODO
       env:
         NODE_ENV: ${{ inputs.debug }}
-      run: 'echo Debug mode is $NODE_ENV jau.'
+      run: echo Debug mode is $NODE_ENV jau.
       shell: bash
 
     # Runs a set of commands using the runners shell
