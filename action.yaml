@@ -7,9 +7,6 @@ inputs:
     default: ''
 
 runs:
-  #env:
-  #  NODE_ENV: '${{ inputs.debug }}'
-
   using: composite
 
   steps:
@@ -30,5 +27,7 @@ runs:
       shell: bash
 
     - name: Install packages marked as dependencies
+      env:
+        NODE_ENV: ${{ inputs.debug }}
       run: yarn
       shell: bash
