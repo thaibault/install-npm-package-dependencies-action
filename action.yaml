@@ -13,6 +13,8 @@ runs:
     - uses: actions/checkout@v4.1.0
 
     - name: TODO
+      env:
+        NODE_ENV: ${{ inputs.debug }}
       run: 'echo Debug mode is $NODE_ENV jau.'
       shell: bash
 
