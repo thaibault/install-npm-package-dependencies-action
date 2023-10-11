@@ -7,8 +7,8 @@ inputs:
     default: ''
 
 runs:
-  env:
-    NODE_ENV: '${{ inputs.debug }}'
+  #env:
+  #  NODE_ENV: '${{ inputs.debug }}'
 
   using: composite
 
