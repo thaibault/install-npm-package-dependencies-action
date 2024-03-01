@@ -12,11 +12,9 @@ runs:
   steps:
     - uses: actions/checkout@v4.1.1
 
-    # Runs a set of commands using the runners shell
-
-    #- name: Install yarn
-    #  run: npm install --global yarn
-    #  shell: bash
+    - name: Enable corepack to utilize latest or specified package manager.
+      run: corepack enable
+      shell: bash
 
     - name: Disable node version check
       run: yarn config set ignore-engines true
