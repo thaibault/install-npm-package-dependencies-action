@@ -16,10 +16,6 @@ runs:
       run: corepack enable
       shell: bash
 
-    - name: Disable node version check
-      run: yarn config set ignore-engines true
-      shell: bash
-
     - name: Install packages marked as dependencies
       env:
         NODE_ENV: ${{ contains(inputs.debug, 'true') && 'debug' }}
