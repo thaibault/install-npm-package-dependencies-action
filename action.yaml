@@ -16,7 +16,7 @@ runs:
     - name: Checkout repository.
       uses: actions/checkout@v4.2.2
       with:
-        fetch-depth: {{ inputs.fetch-depth || 1 }}
+        fetch-depth: ${{ inputs.fetch-depth || 1 }}
 
     - name: Enable corepack to utilize latest or specified package manager.
       run: corepack enable
