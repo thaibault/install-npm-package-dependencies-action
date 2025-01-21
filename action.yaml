@@ -5,12 +5,16 @@ inputs:
     description: Sets "NODE_ENV" to "debug".
     required: false
     default: false
+  fetch-depth:
+    default: 1
 
 runs:
   using: composite
 
   steps:
     - uses: actions/checkout@v4.2.2
+      with:
+        fetch-depth: {{ inputs.fetch-depth || '1' }}
 
     - name: Enable corepack to utilize latest or specified package manager.
       run: corepack enable
