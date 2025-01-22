@@ -20,7 +20,7 @@ runs:
       uses: actions/checkout@v4.2.2
       with:
         fetch-depth: ${{ inputs.fetch-depth || 1 }}
-        fetch-tags: ${{ inputs.fetch-tags || 1 }}
+        fetch-tags: ${{ inputs.fetch-tags || true }}
 
     - name: Enable corepack to utilize latest or specified package manager.
       run: corepack enable
