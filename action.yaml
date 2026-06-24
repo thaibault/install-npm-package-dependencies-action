@@ -17,7 +17,7 @@ runs:
 
   steps:
     - name: Checkout repository.
-      uses: actions/checkout@v6
+      uses: actions/checkout@main
       with:
         fetch-depth: ${{ inputs.fetch-depth || 1 }}
         fetch-tags: ${{ inputs.fetch-tags || true }}
