@@ -22,6 +22,12 @@ runs:
         fetch-depth: ${{ inputs.fetch-depth || 1 }}
         fetch-tags: ${{ inputs.fetch-tags || true }}
 
+    # NOTE: Node.js >= 25 (e.g. "node:lts" since 26) does not bundle corepack
+    # anymore.
+    - name: Install corepack if not bundled with the current Node.js version.
+      run: command -v corepack &>/dev/null || npm install --global corepack@latest
+      shell: bash
+
     - name: Enable corepack to utilize latest or specified package manager.
       run: corepack enable
       shell: bash
